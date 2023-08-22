@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-@Tag("regression")
 public class DeliveryClub {
     private static WebDriver webDriver;
 
@@ -19,6 +18,7 @@ public class DeliveryClub {
         webDriver.get("https://market-delivery.yandex.ru/");
     }
 
+    @Tag("regression")
     @Test
     @Step("Позитивный сценарий. Заказ из ресторана 'KFC' до экрана оплаты")
     @SneakyThrows
@@ -41,6 +41,7 @@ public class DeliveryClub {
         webDriver.findElement(By.xpath("//*[contains(@class,'UiKitConfirmModal')]//span[contains(text(),'Да, очистить')]")).click();
     }
 
+    @Tag("regression")
     @Test
     @Step("Позитивный сценарий. Заказ из ресторана 'Pronto Pizza' до экрана оплаты")
     @SneakyThrows
@@ -62,6 +63,7 @@ public class DeliveryClub {
         webDriver.findElement(By.xpath("//*[contains(@class,'UiKitConfirmModal')]//span[contains(text(),'Да, очистить')]")).click();
     }
 
+    @Tag("regression")
     @Test
     @Step("Негативный сценарий авторизации по номеру телефона'")
     public void negativeAuth() {
