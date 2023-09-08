@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id("io.qameta.allure") version "2.11.2"
 }
 
 group 'org.example'
@@ -13,17 +14,18 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.11.0'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
+    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
     testImplementation 'io.qameta.allure:allure-junit5:2.23.0'
     testImplementation 'org.projectlombok:lombok:1.18.28'
     implementation 'io.qameta.allure:allure-java-commons:2.23.0'
-
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 test {
     useJUnitPlatform {
-        if (tag == "regression")
-            includeTags("regression")
+        if (tag == "smoke")
+            includeTags("smoke")
 
         if (browser) {
             if (browser.equalsIgnoreCase("chrome") && !remoteUrl) {
