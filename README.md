@@ -16,7 +16,7 @@
 
 Запуск автотестов:
 1) Через терминал "Execute Gradle Task";
-2) Ввести "gradle clean test -Ptag=smoke -Pstand=smoke -i", где:
+2) Ввести "gradle clean test -Ptag=smoke -Pbrowser=chrome -PwebdriverPath=/path/to/webdriver -PbrowserVersion=86 -i", где:
 - *gradle* - запускает сборку проекта с помощью системы сборки Gradle.
 - *clean* - удаляет все сгенерированные ранее файлы и директории из проекта.
 - *test* - запускает тесты в проекте.
